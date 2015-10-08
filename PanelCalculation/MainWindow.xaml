@@ -7,22 +7,25 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="725" Width="1000">
     <Grid>
-        <TextBox x:Name="textBox_Copy3" HorizontalAlignment="Left" Height="23" Margin="210,212,0,0" TextWrapping="Wrap" Text="Крыша" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="textBox_Copy3" HorizontalAlignment="Left" Height="23" Margin="171,87,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="55" TextChanged="textBox_Copy3_TextChanged"/>
         <TextBox x:Name="textBox_Copy4" HorizontalAlignment="Left" Height="23" Margin="346,274,0,0" TextWrapping="Wrap" Text="4" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="textBox_Copy5" HorizontalAlignment="Left" Height="23" Margin="484,274,0,0" TextWrapping="Wrap" Text="4" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="textBox_Copy6" HorizontalAlignment="Left" Height="23" Margin="624,274,0,0" TextWrapping="Wrap" Text="4" VerticalAlignment="Top" Width="120"/>
-        <Label x:Name="label" Content="Длина" HorizontalAlignment="Left" Margin="29,10,0,0" VerticalAlignment="Top" Width="85"/>
-        <Label x:Name="label_Copy" Content="Высота" HorizontalAlignment="Left" Margin="29,41,0,0" VerticalAlignment="Top" Width="85"/>
-        <Label x:Name="label_Copy1" Content="Ширина" HorizontalAlignment="Left" Margin="29,72,0,0" VerticalAlignment="Top" Width="85"/>
-        <Label x:Name="label1" Content="Коэфф. теплопроводн." HorizontalAlignment="Left" Margin="10,171,0,0" VerticalAlignment="Top" Width="155"/>
-        <ComboBox x:Name="comboBox" HorizontalAlignment="Left" Height="38" Margin="10,202,0,0" VerticalAlignment="Top" Width="155"/>
+        <Label x:Name="label" Content="Длина" HorizontalAlignment="Left" Margin="20,10,0,0" VerticalAlignment="Top" Width="50"/>
+        <Label x:Name="label_Copy" Content="Высота" HorizontalAlignment="Left" Margin="135,8,0,0" VerticalAlignment="Top" Width="51"/>
+        <Label x:Name="label_Copy1" Content="Ширина" HorizontalAlignment="Left" Margin="255,10,0,0" VerticalAlignment="Top" Width="63"/>
+        <Label x:Name="label1" Content="Коэфф. теплопроводн." HorizontalAlignment="Left" Margin="10,56,0,0" VerticalAlignment="Top" Width="155"/>
+        <ComboBox x:Name="comboBox" HorizontalAlignment="Left" Height="23" Margin="20,87,0,0" VerticalAlignment="Top" Width="55">
+            <ComboBoxItem Content="04"/>
+            <ComboBoxItem Content="0.7"/>
+        </ComboBox>
         <TextBox x:Name="textBox_Copy7" HorizontalAlignment="Left" Height="23" Margin="210,274,0,0" TextWrapping="Wrap" Text="Крыша" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="textBox_Copy8" HorizontalAlignment="Left" Height="23" Margin="346,212,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="textBox_Copy9" HorizontalAlignment="Left" Height="23" Margin="484,212,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="textBox_Copy10" HorizontalAlignment="Left" Height="23" Margin="624,212,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="textBox_Copy8" HorizontalAlignment="Left" Height="23" Margin="231,87,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="55"/>
+        <TextBox x:Name="textBox_Copy9" HorizontalAlignment="Left" Height="23" Margin="291,87,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="55"/>
+        <TextBox x:Name="textBox_Copy10" HorizontalAlignment="Left" Height="23" Margin="351,87,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="55"/>
         <Label x:Name="label1_Copy" Content="Подклад" HorizontalAlignment="Left" Margin="75,270,0,0" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="textBox_Copy11" HorizontalAlignment="Left" Height="23" Margin="771,274,0,0" TextWrapping="Wrap" Text="4" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="textBox_Copy12" HorizontalAlignment="Left" Height="23" Margin="771,212,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.592,0.609"/>
+        <TextBox x:Name="textBox_Copy12" HorizontalAlignment="Left" Height="23" Margin="411,87,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="55" RenderTransformOrigin="0.592,0.609"/>
         <TextBox x:Name="textBox_Copy" HorizontalAlignment="Left" Height="23" Margin="210,324,0,0" TextWrapping="Wrap" Text="Крыша" VerticalAlignment="Top" Width="120"/>
         <Label x:Name="label1_Copy2" Content="Наружная&#xA;" HorizontalAlignment="Left" Margin="66,301,0,0" VerticalAlignment="Top" Width="120" Height="26"/>
         <Label x:Name="label1_Copy3" Content="Внутренняя" HorizontalAlignment="Left" Margin="66,430,0,0" VerticalAlignment="Top" Width="120" Height="26"/>
@@ -61,7 +64,14 @@
         <TextBox x:Name="textBox_Copy13" HorizontalAlignment="Left" Height="23" Margin="612,555,0,0" TextWrapping="Wrap" Text="4" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="textBox_Copy14" HorizontalAlignment="Left" Height="23" Margin="198,555,0,0" TextWrapping="Wrap" Text="Крыша" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="textBox_Copy16" HorizontalAlignment="Left" Height="23" Margin="759,555,0,0" TextWrapping="Wrap" Text="4" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="textBox1" HorizontalAlignment="Left" Height="26" Margin="165,10,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="107"/>
+        <TextBox x:Name="L" HorizontalAlignment="Left" Height="26" Margin="70,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="50"/>
+        <TextBox x:Name="H" HorizontalAlignment="Left" Height="26" Margin="191,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="50"/>
+        <TextBox x:Name="B" HorizontalAlignment="Left" Height="26" Margin="323,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="50"/>
+        <Label x:Name="label3" Content="Крыша" HorizontalAlignment="Left" Height="26" Margin="171,56,0,0" VerticalAlignment="Top" Width="55"/>
+        <Label x:Name="label3_Copy" Content="Стены" HorizontalAlignment="Left" Height="26" Margin="231,56,0,0" VerticalAlignment="Top" Width="55"/>
+        <Label x:Name="label3_Copy1" Content="Щит" HorizontalAlignment="Left" Height="26" Margin="291,56,0,0" VerticalAlignment="Top" Width="55"/>
+        <Label x:Name="label3_Copy2" Content="Двери" HorizontalAlignment="Left" Height="26" Margin="351,56,0,0" VerticalAlignment="Top" Width="55"/>
+        <Label x:Name="label3_Copy3" Content="Пол" HorizontalAlignment="Left" Height="26" Margin="411,56,0,0" VerticalAlignment="Top" Width="55"/>
 
     </Grid>
 </Window>

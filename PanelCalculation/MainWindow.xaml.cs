@@ -34,5 +34,15 @@ namespace PanelCalculation
         {
 
         }
+
+        private void textBox_Copy3_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void comboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }
