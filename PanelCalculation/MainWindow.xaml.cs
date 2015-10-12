@@ -39,10 +39,28 @@ namespace PanelCalculation
         {
 
         }
-
-        private void comboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
+        
+        private void tepl_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {            
+            
+            switch ((e.AddedItems[0] as ComboBoxItem).Content as string)
+            {
+                case "0,4":
+                    ut_kr.Text = "80";
+                    ut_st.Text = "60";
+                    ut_shit.Text = "80";
+                    ut_dv.Text = "80";
+                    ut_pol.Text = "80";                    
+                    break;
+                case "0,7":
+                    ut_kr.Text = "50";
+                    ut_st.Text = "50";
+                    ut_shit.Text = "50";
+                    ut_dv.Text = "50";
+                    ut_pol.Text = "50";
+                    break;
+                
+            }
         }
     }
 }
