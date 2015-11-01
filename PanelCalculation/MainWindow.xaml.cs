@@ -25,6 +25,7 @@ namespace PanelCalculation
             InitializeComponent();
         }
 
+
         private void comboBox2_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
@@ -61,6 +62,19 @@ namespace PanelCalculation
                     break;
                 
             }
+        }
+
+        private void button_Click(object sender, RoutedEventArgs e)
+        {
+            double Length, dutkr, dutdv, dutshit;
+            
+            double.TryParse(L.Text,out Length);
+            double.TryParse(ut_kr.Text, out dutkr);
+            double.TryParse(ut_shit.Text, out dutshit);
+            double.TryParse(ut_dv.Text, out dutdv);
+            double length_kr = Length + dutkr + dutshit + dutdv;
+            MessageBox.Show(length_kr.ToString());
+
         }
     }
 }
