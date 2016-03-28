@@ -85,13 +85,27 @@
             <ListBoxItem Content="Алюминий"/>
             <ListBoxItem Content="Цинк 1 мм"/>
         </ComboBox>
-        <ComboBox x:Name="фанера" HorizontalAlignment="Left" Height="26" Margin="422,291,0,0" VerticalAlignment="Top" Width="44">
-            <ListBoxItem Content="12 мм"/>
+        <ComboBox x:Name="fanera" HorizontalAlignment="Left" Height="26" Margin="422,291,0,0" VerticalAlignment="Top" Width="97"
+            
+            ItemsSource="{Binding Path=Faneras}"
+            SelectedValuePath="Value" >
+            <!--SelectedValue="{Binding Path=SelectedFaneraIndex}">--> 
+           
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <!--<TextBlock Text="{Binding Path=Value}" />-->
+                        <TextBlock Text="{Binding Path=Key}" />
+                    </StackPanel>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+
+            <!--<ListBoxItem Content="12 мм"/>
             <ListBoxItem Content="15 мм"/>
             <ListBoxItem Content="18 мм"/>
             <ListBoxItem Content="24 мм"/>
             <ListBoxItem Content="27 мм"/>
-            <ListBoxItem Content="30 мм"/>
+            <ListBoxItem Content="30 мм"/>-->
         </ComboBox>
         <TextBox x:Name="textBox_Copy1" HorizontalAlignment="Left" Height="23" Margin="266,249,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="20"/>
         <TextBox x:Name="textBox_Copy2" HorizontalAlignment="Left" Height="23" Margin="361,249,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="20"/>
