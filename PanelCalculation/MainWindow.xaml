@@ -10,7 +10,7 @@
     <Grid>
         <TextBox x:Name="ut_kr" HorizontalAlignment="Left" Height="23" Margin="171,87,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="55" TextChanged="textBox_Copy3_TextChanged"/>
         <TextBox x:Name="podk_st" HorizontalAlignment="Left" Height="23" Margin="231,130,0,0" TextWrapping="Wrap" Text="4" VerticalAlignment="Top" Width="55"/>
-        <TextBox x:Name="podk_shit" HorizontalAlignment="Left" Height="23" Margin="291,130,0,0" TextWrapping="Wrap" Text="4" VerticalAlignment="Top" Width="55"/>
+        <TextBox x:Name="podk_per" HorizontalAlignment="Left" Height="23" Margin="291,130,0,0" TextWrapping="Wrap" Text="4" VerticalAlignment="Top" Width="55"/>
         <TextBox x:Name="podk_dv" HorizontalAlignment="Left" Height="23" Margin="351,130,0,0" TextWrapping="Wrap" Text="4" VerticalAlignment="Top" Width="55"/>
         <Label x:Name="label" Content="Длина" HorizontalAlignment="Left" Margin="175,10,0,0" VerticalAlignment="Top" Width="50"/>
         <Label x:Name="label_Copy" Content="Высота" HorizontalAlignment="Left" Margin="431,8,0,0" VerticalAlignment="Top" Width="51"/>
@@ -22,68 +22,122 @@
         </ComboBox>
         <TextBox x:Name="podk_kr" HorizontalAlignment="Left" Height="23" Margin="171,130,0,0" TextWrapping="Wrap" Text="4" VerticalAlignment="Top" Width="55"/>
         <TextBox x:Name="ut_st" HorizontalAlignment="Left" Height="23" Margin="231,87,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="55"/>
-        <TextBox x:Name="ut_shit" HorizontalAlignment="Left" Height="23" Margin="291,87,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="55"/>
+        <TextBox x:Name="ut_per" HorizontalAlignment="Left" Height="23" Margin="291,87,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="55"/>
         <TextBox x:Name="ut_dv" HorizontalAlignment="Left" Height="23" Margin="351,87,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="55"/>
         <Label x:Name="label1_Copy" Content="Подклад" HorizontalContentAlignment="Right"  HorizontalAlignment="Left" Margin="41,126,0,0" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="podk_pol" HorizontalAlignment="Left" Height="23" Margin="411,130,0,0" TextWrapping="Wrap" Text="4" VerticalAlignment="Top" Width="55"/>
         <TextBox x:Name="ut_pol" HorizontalAlignment="Left" Height="23" Margin="411,87,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="55" RenderTransformOrigin="0.592,0.609"/>
         <Label x:Name="label1_Copy2" HorizontalContentAlignment="Right" Content="Наружная обшивка" HorizontalAlignment="Left" Margin="45,166,0,0" VerticalAlignment="Top" Width="120" Height="26"/>
         <Label x:Name="label1_Copy3" HorizontalContentAlignment="Right" Content="Внутренняя обшивка" HorizontalAlignment="Left" Margin="34,206,0,0" VerticalAlignment="Top" Width="131" Height="26"/>
-        <Label x:Name="label2" Content="Пол" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Margin="130,291,0,0" VerticalAlignment="Top" />
-        <ComboBox x:Name="nar_obsh_kr" HorizontalAlignment="Left" Height="23" Margin="171,169,0,0" VerticalAlignment="Top" Width="55">
-            <ComboBoxItem Content="Импортный"/>
-            <ComboBoxItem Content="Техноцентр"/>
-            <ComboBoxItem Content="Цинк"/>
+        <ComboBox x:Name="nar_obsh_kr" HorizontalAlignment="Left" Height="23" Margin="171,169,0,0" VerticalAlignment="Top" Width="55"
+            ItemsSource="{Binding Path=Obshivka_nar}"
+            SelectedValuePath="Value" >
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>                        
+                        <TextBlock Text="{Binding Path=Key}" />
+                    </StackPanel>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
         </ComboBox>
-        <ComboBox x:Name="nar_obsh_st" HorizontalAlignment="Left" Height="23" Margin="231,169,0,0" VerticalAlignment="Top" Width="55">
-            <ComboBoxItem Content="Импортный"/>
-            <ComboBoxItem Content="Техноцентр"/>
-            <ComboBoxItem Content="Цинк"/>
+        <ComboBox x:Name="nar_obsh_st" HorizontalAlignment="Left" Height="23" Margin="231,169,0,0" VerticalAlignment="Top" Width="55"
+            ItemsSource="{Binding Path=Obshivka_nar}"
+            SelectedValuePath="Value" >
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <TextBlock Text="{Binding Path=Key}" />
+                    </StackPanel>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
         </ComboBox>
-        <ComboBox x:Name="nar_obsh_shit" HorizontalAlignment="Left" Height="23" Margin="291,169,0,0" VerticalAlignment="Top" Width="55">
-            <ComboBoxItem Content="Импортный"/>
-            <ComboBoxItem Content="Техноцентр"/>
-            <ComboBoxItem Content="Цинк"/>
+        <ComboBox x:Name="nar_obsh_per" HorizontalAlignment="Left" Height="23" Margin="291,169,0,0" VerticalAlignment="Top" Width="55"
+            ItemsSource="{Binding Path=Obshivka_nar}"
+            SelectedValuePath="Value" >
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <TextBlock Text="{Binding Path=Key}" />
+                    </StackPanel>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
         </ComboBox>
-        <ComboBox x:Name="nar_obsh_dv" HorizontalAlignment="Left" Height="23" Margin="351,169,0,0" VerticalAlignment="Top" Width="55">
-            <ComboBoxItem Content="Импортный"/>
-            <ComboBoxItem Content="Техноцентр"/>
-            <ComboBoxItem Content="Цинк"/>
+        <ComboBox x:Name="nar_obsh_dv" HorizontalAlignment="Left" Height="23" Margin="351,169,0,0" VerticalAlignment="Top" Width="55"
+            ItemsSource="{Binding Path=Obshivka_nar}"
+            SelectedValuePath="Value" >
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <TextBlock Text="{Binding Path=Key}" />
+                    </StackPanel>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
         </ComboBox>
-        <ComboBox x:Name="nar_obsh_pol" HorizontalAlignment="Left" Height="23" Margin="411,169,0,0" VerticalAlignment="Top" Width="55">
-            <ComboBoxItem Content="Импортный"/>
-            <ComboBoxItem Content="Техноцентр"/>
-            <ComboBoxItem Content="Цинк"/>
+        <ComboBox x:Name="nar_obsh_pol" HorizontalAlignment="Left" Height="23" Margin="411,169,0,0" VerticalAlignment="Top" Width="55"
+            ItemsSource="{Binding Path=Obshivka_nar}"
+            SelectedValuePath="Value" >
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <TextBlock Text="{Binding Path=Key}" />
+                    </StackPanel>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
         </ComboBox>
-        <ComboBox x:Name="vn_obsh_kr" HorizontalAlignment="Left" Height="23" Margin="171,209,0,0" VerticalAlignment="Top" Width="55">
-            <ComboBoxItem Content="Импортный"/>
-            <ComboBoxItem Content="Техноцентр"/>
-            <ComboBoxItem Content="Цинк"/>
+        <ComboBox x:Name="vn_obsh_kr" HorizontalAlignment="Left" Height="23" Margin="171,209,0,0" VerticalAlignment="Top" Width="55"
+            ItemsSource="{Binding Path=Obshivka_nar}"
+            SelectedValuePath="Value" >
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <TextBlock Text="{Binding Path=Key}" />
+                    </StackPanel>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
         </ComboBox>
-        <ComboBox x:Name="vn_obsh_st" HorizontalAlignment="Left" Height="23" Margin="231,209,0,0" VerticalAlignment="Top" Width="55">
-            <ComboBoxItem Content="Импортный"/>
-            <ComboBoxItem Content="Техноцентр"/>
-            <ComboBoxItem Content="Цинк"/>
+        <ComboBox x:Name="vn_obsh_st" HorizontalAlignment="Left" Height="23" Margin="231,209,0,0" VerticalAlignment="Top" Width="55"
+            ItemsSource="{Binding Path=Obshivka_nar}"
+            SelectedValuePath="Value" >
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <TextBlock Text="{Binding Path=Key}" />
+                    </StackPanel>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
         </ComboBox>
-        <ComboBox x:Name="vn_obsh_shit" HorizontalAlignment="Left" Height="23" Margin="291,209,0,0" VerticalAlignment="Top" Width="55">
-            <ComboBoxItem Content="Импортный"/>
-            <ComboBoxItem Content="Техноцентр"/>
-            <ComboBoxItem Content="Цинк"/>
+        <ComboBox x:Name="vn_obsh_per" HorizontalAlignment="Left" Height="23" Margin="291,209,0,0" VerticalAlignment="Top" Width="55"
+            ItemsSource="{Binding Path=Obshivka_nar}"
+            SelectedValuePath="Value" >
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <TextBlock Text="{Binding Path=Key}" />
+                    </StackPanel>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
         </ComboBox>
-        <ComboBox x:Name="vn_obsh_dv" HorizontalAlignment="Left" Height="23" Margin="351,209,0,0" VerticalAlignment="Top" Width="55">
-            <ComboBoxItem Content="Импортный"/>
-            <ComboBoxItem Content="Техноцентр"/>
-            <ComboBoxItem Content="Цинк"/>
+        <ComboBox x:Name="vn_obsh_dv" HorizontalAlignment="Left" Height="23" Margin="351,209,0,0" VerticalAlignment="Top" Width="55"
+            ItemsSource="{Binding Path=Obshivka_nar}"
+            SelectedValuePath="Value" >
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <TextBlock Text="{Binding Path=Key}" />
+                    </StackPanel>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
         </ComboBox>
-        <ComboBox x:Name="vn_obsh_pol" HorizontalAlignment="Left" Height="23" Margin="411,209,0,0" VerticalAlignment="Top" Width="55">
-            <ComboBoxItem Content="Импортный"/>
-            <ComboBoxItem Content="Техноцентр"/>
-            <ComboBoxItem Content="Цинк"/>
-        </ComboBox>
-        <ComboBox x:Name="nastil" HorizontalAlignment="Left" Height="26" Margin="171,291,0,0" VerticalAlignment="Top" Width="133">
-            <ListBoxItem Content="Заливка"/>
-            <ListBoxItem Content="Алюминий"/>
-            <ListBoxItem Content="Цинк 1 мм"/>
+        <ComboBox x:Name="vn_obsh_pol" HorizontalAlignment="Left" Height="23" Margin="411,209,0,0" VerticalAlignment="Top" Width="55"
+            ItemsSource="{Binding Path=Pol_panel}"
+            SelectedValuePath="Value" >
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <TextBlock Text="{Binding Path=Key}" />
+                    </StackPanel>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
         </ComboBox>
         <ComboBox x:Name="fanera" HorizontalAlignment="Left" Height="26" Margin="422,291,0,0" VerticalAlignment="Top" Width="97"
             
@@ -99,13 +153,6 @@
                     </StackPanel>
                 </DataTemplate>
             </ComboBox.ItemTemplate>
-
-            <!--<ListBoxItem Content="12 мм"/>
-            <ListBoxItem Content="15 мм"/>
-            <ListBoxItem Content="18 мм"/>
-            <ListBoxItem Content="24 мм"/>
-            <ListBoxItem Content="27 мм"/>
-            <ListBoxItem Content="30 мм"/>-->
         </ComboBox>
         <TextBox x:Name="textBox_Copy1" HorizontalAlignment="Left" Height="23" Margin="266,249,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="20"/>
         <TextBox x:Name="textBox_Copy2" HorizontalAlignment="Left" Height="23" Margin="361,249,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="20"/>
@@ -121,7 +168,7 @@
         <Label x:Name="label3_Copy2" Content="Двери" HorizontalAlignment="Left" Height="26" Margin="351,56,0,0" VerticalAlignment="Top" Width="55"/>
         <Label x:Name="label3_Copy3" Content="Пол" HorizontalAlignment="Left" Height="26" Margin="411,56,0,0" VerticalAlignment="Top" Width="55"/>
         <Label x:Name="label4" HorizontalContentAlignment="Right" Content="Кол-во ребер жесткости" HorizontalAlignment="Left" Margin="10,245,0,0" VerticalAlignment="Top" Width="155" Height="26"/>
-        <Label x:Name="label5" HorizontalContentAlignment="Right" Content="Фанера" HorizontalAlignment="Left" Margin="354,291,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label5" HorizontalContentAlignment="Right" Content="Фанера пола" HorizontalAlignment="Left" Margin="335,291,0,0" VerticalAlignment="Top"/>
         <ComboBox x:Name="comboBox" HorizontalAlignment="Left" Height="23" Margin="196,249,0,0" VerticalAlignment="Top" Width="55" RenderTransformOrigin="0.5,0.5">
             <ComboBoxItem Content="Ф24"/>
             <ComboBoxItem Content="Ф27"/>
@@ -160,6 +207,8 @@
             <ComboBoxItem Content="Б 42x50"/>
         </ComboBox>
         <Button x:Name="button" Content="Рассчитать" HorizontalAlignment="Left" Margin="291,341,0,0" VerticalAlignment="Top" Width="75" Click="button_Click"/>
+        <Label x:Name="label5_Copy" HorizontalContentAlignment="Right" Content="Высота платформы" HorizontalAlignment="Left" Margin="80,291,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="h_platform" HorizontalAlignment="Left" Height="23" Margin="201,294,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="55"/>
 
     </Grid>
 </Window>
