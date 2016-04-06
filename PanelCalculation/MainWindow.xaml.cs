@@ -25,9 +25,24 @@ namespace PanelCalculation
         public string Name { get; set; }
         public double Thickness { get; set; }
         public bool isFloor { get; set; } = false;
+        public double S { get; set; }
     }
+
+
     public partial class MainWindow : Window
     {
+        //public obshivka ob1 { get; set; }
+        //public obshivka ob2 { get; set; }
+        //public obshivka ob3 { get; set; }
+        //public obshivka ob4 { get; set; }
+        //public obshivka ob5 { get; set; }
+
+        public obshivka o1;
+        public obshivka o2;
+        public obshivka o3;
+        public obshivka o4;
+        public obshivka o5;
+
         public MainWindow()
         {
             InitializeComponent();
@@ -37,18 +52,6 @@ namespace PanelCalculation
             // "24 мм" />
             //  "27 мм" />
             //    < ListBoxItem Content = "30 мм" />
-            obshivka o1 = new obshivka();
-            o1.Name = "Импортный";
-            o1.Thickness = 2;
-            obshivka o2 = new obshivka();
-            o2.Name = "Внутренний ТЦ";
-            o2.Thickness = 2;
-            obshivka o3 = new obshivka();
-            o3.Name = "Наружный ТЦ";
-            o3.Thickness = 2;
-            obshivka o4 = new obshivka();
-            o4.Name = "Цинк";
-            o4.Thickness = 1;
 
             Faneras = new Dictionary<string, int>();
             Faneras.Add("12 мм", 12);
@@ -193,6 +196,28 @@ namespace PanelCalculation
             //MessageBox.Show(length_kr.ToString());
             MessageBox.Show(fanera.SelectedValue.ToString());
 
+            o1 = new obshivka();
+            o1.Name = "Импортный";
+            o1.Thickness = 2;
+            o2 = new obshivka();
+            o2.Name = "Внутренний ТЦ";
+            o2.Thickness = 2;
+            o3 = new obshivka();
+            o3.Name = "Наружный ТЦ";
+            o3.Thickness = 2;
+            o4 = new obshivka();
+            o4.Name = "Цинк";
+            o4.Thickness = 1;
+
+
         }
+        private void Incr_S(string type, double s)
+        {
+            if (true)
+            {
+
+            }
+        }
+
     }
 }
