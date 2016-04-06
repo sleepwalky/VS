@@ -19,17 +19,36 @@ namespace PanelCalculation
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
+
+    public class obshivka
+    {
+        public string Name { get; set; }
+        public double Thickness { get; set; }
+        public bool isFloor { get; set; } = false;
+    }
     public partial class MainWindow : Window
     {
         public MainWindow()
         {
             InitializeComponent();
-             // "12 мм" />
-             // "15 мм" />
-             // "18 мм" />
-             // "24 мм" />
-             //  "27 мм" />
-             //    < ListBoxItem Content = "30 мм" />
+            // "12 мм" />
+            // "15 мм" />
+            // "18 мм" />
+            // "24 мм" />
+            //  "27 мм" />
+            //    < ListBoxItem Content = "30 мм" />
+            obshivka o1 = new obshivka();
+            o1.Name = "Импортный";
+            o1.Thickness = 2;
+            obshivka o2 = new obshivka();
+            o2.Name = "Внутренний ТЦ";
+            o2.Thickness = 2;
+            obshivka o3 = new obshivka();
+            o3.Name = "Наружный ТЦ";
+            o3.Thickness = 2;
+            obshivka o4 = new obshivka();
+            o4.Name = "Цинк";
+            o4.Thickness = 1;
 
             Faneras = new Dictionary<string, int>();
             Faneras.Add("12 мм", 12);
@@ -117,20 +136,20 @@ namespace PanelCalculation
                 dfanera, dutpol, dnar_obsh_pol, dvn_obsh_pol, dpodk_pol, Width,
                 dnar_obsh_bok, dvn_obsh_bok, dutbok, dpodk_bok,
                 dnar_obsh_per, dvn_obsh_per, dutper, dpodk_per,
-                dh_platform; 
+                dh_platform;
 
 
             double.TryParse(L.Text, out Length);
             double.TryParse(H.Text, out Height);
             double.TryParse(B.Text, out Width);
 
-            double.TryParse(ut_kr.Text, out dutkr);            
+            double.TryParse(ut_kr.Text, out dutkr);
             double.TryParse(ut_dv.Text, out dutdv);
             double.TryParse(ut_pol.Text, out dutpol);
 
             double.TryParse(podk_dv.Text, out dpodk_dv);
-            double.TryParse(podk_pol.Text, out dpodk_pol); 
-                       
+            double.TryParse(podk_pol.Text, out dpodk_pol);
+
             double.TryParse(nar_obsh_dv.SelectedValue.ToString(), out dnar_obsh_dv);
             double.TryParse(vn_obsh_dv.SelectedValue.ToString(), out dvn_obsh_dv);
             double.TryParse(fanera.SelectedValue.ToString(), out dfanera);
