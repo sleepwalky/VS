@@ -43,6 +43,8 @@ namespace PanelCalculation
         public obshivka o4;
         public obshivka o5;
 
+        public List<obshivka> ls;
+
         public MainWindow()
         {
             InitializeComponent();
@@ -194,7 +196,7 @@ namespace PanelCalculation
             //Peredn. stenka
 
             //MessageBox.Show(length_kr.ToString());
-            MessageBox.Show(fanera.SelectedValue.ToString());
+            //MessageBox.Show(fanera.SelectedValue.ToString());
 
             o1 = new obshivka();
             o1.Name = "Импортный";
@@ -209,14 +211,20 @@ namespace PanelCalculation
             o4.Name = "Цинк";
             o4.Thickness = 1;
 
+            ls = new List<obshivka>();
+            ls.Add(o1);
+            ls.Add(o2);
+            ls.Add(o3);
+            ls.Add(o4);
+
+            Incr_S(nar_obsh_st.SelectedItem.ToString(), 2 * s_bok);
 
         }
         private void Incr_S(string type, double s)
         {
-            if (true)
-            {
+            var obsh = ls.FirstOrDefault(x => x.Name == type);
+            obsh.S += s;
 
-            }
         }
 
     }
