@@ -41,7 +41,7 @@
             </ComboBox.ItemTemplate>
         </ComboBox>
         <ComboBox x:Name="nar_obsh_st" HorizontalAlignment="Left" Height="23" Margin="231,169,0,0" VerticalAlignment="Top" Width="55"
-            ItemsSource="{Binding Path=Obshivka_nar}"
+           ItemsSource="{Binding Path=Obshivka_nar}"
             SelectedValuePath="Value" >
             <ComboBox.ItemTemplate>
                 <DataTemplate>

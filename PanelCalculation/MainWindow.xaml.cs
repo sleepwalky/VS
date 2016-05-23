@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Collections.ObjectModel;
 
 namespace PanelCalculation
 {
@@ -44,6 +45,8 @@ namespace PanelCalculation
         public obshivka o5;
 
         public List<obshivka> ls;
+        private ObservableCollection<obshivka> _collection;
+        public ObservableCollection<obshivka> Collection;
 
         public MainWindow()
         {
@@ -75,7 +78,33 @@ namespace PanelCalculation
             Pol_panel.Add("Алюминий 2", 2);
             Pol_panel.Add("Алюминий 3", 3);
 
+            o1 = new obshivka();
+            o1.Name = "Импортный";
+            o1.Thickness = 2;
+            o2 = new obshivka();
+            o2.Name = "Внутренний ТЦ";
+            o2.Thickness = 2;
+            o3 = new obshivka();
+            o3.Name = "Наружный ТЦ";
+            o3.Thickness = 2;
+            o4 = new obshivka();
+            o4.Name = "Цинк";
+            o4.Thickness = 1;
 
+            ls = new List<obshivka>();
+            ls.Add(o1);
+            ls.Add(o2);
+            ls.Add(o3);
+            ls.Add(o4);
+
+            _collection = new ObservableCollection<obshivka>();
+            _collection.Add(o1);
+            _collection.Add(o2);
+            _collection.Add(o3);
+            _collection.Add(o4);
+
+            //nar_obsh_st.ItemsSource = _collection;
+            ////vn_obsh_st.ItemsSource = _collection;
 
             DataContext = this;
         }
@@ -198,26 +227,24 @@ namespace PanelCalculation
             //MessageBox.Show(length_kr.ToString());
             //MessageBox.Show(fanera.SelectedValue.ToString());
 
-            o1 = new obshivka();
-            o1.Name = "Импортный";
-            o1.Thickness = 2;
-            o2 = new obshivka();
-            o2.Name = "Внутренний ТЦ";
-            o2.Thickness = 2;
-            o3 = new obshivka();
-            o3.Name = "Наружный ТЦ";
-            o3.Thickness = 2;
-            o4 = new obshivka();
-            o4.Name = "Цинк";
-            o4.Thickness = 1;
+            // get selected KVP
+            KeyValuePair<string, int> selectedEntry;
+            selectedEntry  = (KeyValuePair<string, int>)nar_obsh_st.SelectedItem;
+            Incr_S(selectedEntry.Key, 2 * s_bok);
 
-            ls = new List<obshivka>();
-            ls.Add(o1);
-            ls.Add(o2);
-            ls.Add(o3);
-            ls.Add(o4);
+            selectedEntry = (KeyValuePair<string, int>)vn_obsh_st.SelectedItem;
+            Incr_S(selectedEntry.Key, 2 * s_bok);
 
-            Incr_S(nar_obsh_st.SelectedItem.ToString(), 2 * s_bok);
+            selectedEntry = (KeyValuePair<string, int>)nar_obsh_per.SelectedItem;
+            Incr_S(selectedEntry.Key, s_per);
+            selectedEntry = (KeyValuePair<string, int>)vn_obsh_per.SelectedItem;
+            Incr_S(selectedEntry.Key, s_per);
+
+            selectedEntry = (KeyValuePair<string, int>)vn_obsh_kr.SelectedItem;
+            Incr_S(selectedEntry.Key, s_kr);
+            selectedEntry = (KeyValuePair<string, int>)nar_obsh_kr.SelectedItem;
+            Incr_S(selectedEntry.Key, s_kr);
+
 
         }
         private void Incr_S(string type, double s)
@@ -227,5 +254,9 @@ namespace PanelCalculation
 
         }
 
+        private void vn_obsh_st_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }
