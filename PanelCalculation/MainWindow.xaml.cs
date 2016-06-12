@@ -218,6 +218,8 @@ namespace PanelCalculation
             double s_kr = width_nar * length_kr;
             double s_pol = length_bok * Width;
 
+            double vol_ut = s_per * dutper + 2 * s_bok * dutbok + s_dv * dutdv + s_kr * dutkr + s_pol * dutpol;
+
             double s_nar = s_bok * 2 + s_per + s_dv;
             double s_vn = s_nar + s_kr * 2 + s_pol; //если пластик
 
